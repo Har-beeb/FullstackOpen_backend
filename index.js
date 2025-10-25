@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 var morgan = require('morgan')
 
+// Module 3.11 - Phonebook backend step 11
+app.use(express.static('dist'))
+
 // Module 3.9 - Phonebook backend step 9
 const cors = require('cors')
 app.use(cors())
@@ -129,4 +132,5 @@ app.get('/api/persons', (request, response) => {
 const PORT = process.env.PORT || 3002
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
+
 })
